@@ -79,6 +79,7 @@ class AugmentMelSTFT(nn.Module):
             melspec = self.timem(melspec)
 
         melspec = (melspec + 4.5) / 5.  # fast normalization
+        melspec = melspec.unsqueeze(dim=1)
 
         return melspec
 
